@@ -8,6 +8,9 @@ function AddTodo() {
   const addTodoHandler = (e) => {
     e.preventDefault();
     dispatch(addTodo(input));
+    const existingTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    const newTodos = [...existingTodos, input];
+    localStorage.setItem("todos", JSON.stringify(newTodos));
     setInput("");
   };
   return (

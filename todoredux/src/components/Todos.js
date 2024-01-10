@@ -6,7 +6,6 @@ function Todos(){
     
     return(
         <>
-        <div >Todo</div>
         {todos.map((todo)=>(
             <div  key={todo.id}>{todo.text}</div>
         ))}
